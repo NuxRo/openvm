@@ -1,7 +1,7 @@
 skipx
 text
 install
-halt
+reboot
 lang en_US.UTF-8
 keyboard us
 timezone --utc GMT

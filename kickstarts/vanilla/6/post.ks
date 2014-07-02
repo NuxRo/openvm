@@ -173,3 +173,5 @@ echo "virtual-guest" > /etc/tune-profiles/active-profile
 # randomise root password
 openssl rand -base64 32 | passwd --stdin root
 
+# no zeroconf
+echo NOZEROCONF=yes >> /mnt/sysimage/etc/sysconfig/network

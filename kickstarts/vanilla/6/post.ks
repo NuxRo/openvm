@@ -174,4 +174,4 @@ echo "virtual-guest" > /etc/tune-profiles/active-profile
 openssl rand -base64 32 | passwd --stdin root
 
 # no zeroconf
-echo NOZEROCONF=yes >> /mnt/sysimage/etc/sysconfig/network
+echo NOZEROCONF=yes >> /etc/sysconfig/network

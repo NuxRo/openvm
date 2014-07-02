@@ -1,8 +1,14 @@
-# pre
-%include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/6/pre.ks
+skipx
+text
+install
+halt
+lang en_US.UTF-8
+keyboard us
+timezone --utc GMT
 
-# install 
-%include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/6/install.ks
+
+# repos
+%include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/6/repos.ks
 
 # selinux, firewall
 %include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/6/security.ks

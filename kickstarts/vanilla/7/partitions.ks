@@ -1,4 +1,4 @@
-zerombr yes
+zerombr
 clearpart --initlabel --all
 # One partition to rule them all, no swap
 part / --size=1024 --grow --fstype ext4 --asprimary

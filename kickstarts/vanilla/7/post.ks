@@ -155,10 +155,6 @@ EOF
 
 chmod +x /var/lib/cloud/scripts/per-boot/10_cloud-set-guest-password
 
-# Enable the serial console login
-echo ttyS0 >> /etc/securetty
-sed -i 's@ACTIVE_CONSOLES=/dev/tty\[1-6\]@ACTIVE_CONSOLES="/dev/tty\[1-6\] /dev/ttyS0"@g' /etc/sysconfig/init
-
 #bz912801
 # prevent udev rules from remapping nics
 echo "bogus content to prevent udev rules from remapping nics bz912801" > /etc/udev/rules.d/*-persistent-net-generator.rules

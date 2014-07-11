@@ -9,6 +9,7 @@ ntp
 wget
 acpid
 tuned
+dracut-config-generic
 #do we want EPEL?
 #epel-release
 -*-firmware
@@ -23,3 +24,6 @@ tuned
 -redhat-support-tool
 -system-config-*
 -wireless-tools
+-firewalld
+-iprutils
+-kbd

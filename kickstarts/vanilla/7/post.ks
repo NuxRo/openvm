@@ -167,7 +167,7 @@ echo PERSISTENT_DHCLIENT="1" >> /etc/sysconfig/network-scripts/ifcfg-eth0
 echo "virtual-guest" > /etc/tune-profiles/active-profile
 
 # randomise root password
-openssl rand -base64 32 | passwd --stdin root
+#openssl rand -base64 32 | passwd --stdin root
 
 # no zeroconf
 echo NOZEROCONF=yes >> /etc/sysconfig/network

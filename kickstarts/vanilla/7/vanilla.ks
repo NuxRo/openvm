@@ -25,6 +25,8 @@ timezone --utc GMT
 %include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/7/services.ks
 
 # post
-%include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/7/post.ks
+%include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/7/post_start.ks
+%include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/7/post_sysprep.ks
+%include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/7/post_cloudstack.ks
 %include http://dl.openvm.eu/cloudstack/centos/ks/vanilla/7/post_end.ks
 

@@ -1,6 +1,7 @@
-#bz912801
+#bz912 801
 # prevent udev rules from remapping nics
-echo "bogus content to prevent udev rules from remapping nics bz912801" > /etc/udev/rules.d/\*-persistent-net-generator.rules
+#echo "bogus content to prevent udev rules from remapping nics bz912801" > /etc/udev/rules.d/70-*
+rm -fv /etc/udev/rules.d/70-*
 
 #bz 1011013
 # set eth0 to recover from dhcp errors

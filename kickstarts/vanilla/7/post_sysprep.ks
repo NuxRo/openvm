@@ -53,6 +53,10 @@ yum -C -y remove firewalld --setopt="clean_requirements_on_remove=1"
 echo "Removing authconfig."
 yum -C -y remove authconfig --setopt="clean_requirements_on_remove=1"
 
+# NetworkManager gets in the way, as usual
+yum -C -y remove NetworkManager --setopt="clean_requirements_on_remove=1"
+
+
 # Because memory is scarce resource in most cloud/virt environments,
 # and because this impedes forensics, we are differing from the Fedora
 # default of having /tmp on tmpfs.

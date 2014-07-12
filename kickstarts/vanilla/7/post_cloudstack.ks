@@ -7,8 +7,8 @@ datasource_list:
   - CloudStack
 EOF
 #fix userdata url issue with ending slash
-sed -i '385i \ \ \ \ #cloudstack fix remove ending slash' /usr/lib/python2.6/site-packages/boto/utils.py
-sed -i '386i \ \ \ \ ud_url = ud_url[:-1]' /usr/lib/python2.6/site-packages/boto/utils.py
+sed -i '385i \ \ \ \ #cloudstack fix remove ending slash' /usr/lib/python2.7/site-packages/boto/utils.py
+sed -i '386i \ \ \ \ ud_url = ud_url[:-1]' /usr/lib/python2.7/site-packages/boto/utils.py
 sed -i 's,disable_root: 1,disable_root: 0,' /etc/cloud/cloud.cfg
 sed -i 's,ssh_pwauth:   0,ssh_pwauth:   1,' /etc/cloud/cloud.cfg
 sed -i 's,name: cloud-user,name: root,' /etc/cloud/cloud.cfg
@@ -44,7 +44,7 @@ cat > /var/lib/cloud/scripts/per-boot/10_cloud-set-guest-password << "EOF"
 user=root
 
 # Add your DHCP lease folders here
-DHCP_FOLDERS="/var/lib/dhclient/* /var/lib/dhcp3/* /var/lib/dhcp/*"
+DHCP_FOLDERS="/var/lib/dhclient/* /var/lib/dhcp3/* /var/lib/dhcp/* /var/lib/NetworkManager/*"
 password_received=0
 file_count=0
 error_count=0

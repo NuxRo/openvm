@@ -161,7 +161,7 @@ sed -i 's@ACTIVE_CONSOLES=/dev/tty\[1-6\]@ACTIVE_CONSOLES="/dev/tty\[1-6\] /dev/
 
 #bz912801
 # prevent udev rules from remapping nics
-find /etc/udev/rules.d/ -name *persistent* | xargs truncate -s0
+for i in `find /etc/udev/rules.d/ -name "*persistent*"`; do echo "no re-mapping bz912801" > $i; done
 
 #bz 1011013
 # set eth0 to recover from dhcp errors

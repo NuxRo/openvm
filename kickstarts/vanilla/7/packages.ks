@@ -10,6 +10,7 @@ wget
 acpid
 tuned
 dracut-config-generic
+iptables-services
 #do we want EPEL?
 #epel-release
 -*-firmware

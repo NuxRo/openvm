@@ -3,8 +3,8 @@ openssh-server
 # cloud-init and growroot will expand the partition and filesystem to match the underlying image
 cloud-init
 python-jsonpatch
-#dracut-modules-growroot not in EL7 
 cloud-utils-growpart
+dracut-modules-growroot
 ntp
 wget
 acpid

@@ -34,6 +34,9 @@ sed -i 's,disable_root: 1,disable_root: 0,' /etc/cloud/cloud.cfg
 sed -i 's,ssh_pwauth:   0,ssh_pwauth:   1,' /etc/cloud/cloud.cfg
 sed -i 's,name: cloud-user,name: root,' /etc/cloud/cloud.cfg
 
+# non-blocking resizefs, should be done in background
+sed -i '/resize_rootfs_tmp/aresize_rootfs: noblock' /etc/cloud/cloud.cfg
+
 mkdir -p /var/lib/cloud/scripts/per-boot
 cat > /var/lib/cloud/scripts/per-boot/10_cloud-set-guest-password << "EOF"
 #!/bin/bash

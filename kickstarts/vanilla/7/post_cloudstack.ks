@@ -9,34 +9,79 @@ EOF
 #fix userdata url issue with ending slash
 sed -i '385i \ \ \ \ #cloudstack fix remove ending slash' /usr/lib/python2.7/site-packages/boto/utils.py
 sed -i '386i \ \ \ \ ud_url = ud_url[:-1]' /usr/lib/python2.7/site-packages/boto/utils.py
-sed -i 's,disable_root: 1,disable_root: 0,' /etc/cloud/cloud.cfg
-sed -i 's,ssh_pwauth:   0,ssh_pwauth:   1,' /etc/cloud/cloud.cfg
-sed -i 's,name: cloud-user,name: root,' /etc/cloud/cloud.cfg
 
+#sed -i 's,disable_root: 1,disable_root: 0,' /etc/cloud/cloud.cfg
+#sed -i 's,ssh_pwauth:   0,ssh_pwauth:   1,' /etc/cloud/cloud.cfg
+#sed -i 's,name: cloud-user,name: root,' /etc/cloud/cloud.cfg
 # non-blocking resize fs, should be done in the background
-sed -i '/resize_rootfs_tmp/aresize_rootfs: noblock' /etc/cloud/cloud.cfg
+#sed -i '/resize_rootfs_tmp/aresize_rootfs: noblock' /etc/cloud/cloud.cfg
 
-# ugly hack to add self-resizability
-mkdir -p /var/lib/cloud/scripts/per-once
+# cloudstack friendly cloud.cfg
 
-cat > /var/lib/cloud/scripts/per-once/10_resizeroot << "EOF"
-#!/usr/bin/bash
+cat > /etc/cloud/cloud.cfg << "EOF"
+users:
+ - default
 
+disable_root: 0
+ssh_pwauth:   1
 
-disc=`/usr/bin/find /dev/ \( -name vda -o -name sda -o -name xvda \) -print`
+locale_configfile: /etc/sysconfig/i18n
+mount_default_fields: [~, ~, 'auto', 'defaults,nofail', '0', '2']
+resize_rootfs_tmp: /dev
+resize_rootfs: noblock
+ssh_deletekeys:   0
+ssh_genkeytypes:  ~
+syslog_fix_perms: ~
 
+cloud_init_modules:
+ - migrator
+ - bootcmd
+ - write-files
+ - growpart
+ - resizefs
+ - set_hostname
+ - update_hostname
+ - update_etc_hosts
+ - rsyslog
+ - users-groups
+ - ssh
 
-/usr/bin/echo "d
-n
-p
-1
-2048
+cloud_config_modules:
+ - mounts
+ - locale
+ - set-passwords
+ - yum-add-repo
+ - package-update-upgrade-install
+ - timezone
+ - puppet
+ - chef
+ - salt-minion
+ - mcollective
+ - disable-ec2-metadata
+ - runcmd
 
-w
-" | /usr/sbin/fdisk $disc && reboot
+cloud_final_modules:
+ - rightscale_userdata
+ - scripts-per-once
+ - scripts-per-boot
+ - scripts-per-instance
+ - scripts-user
+ - ssh-authkey-fingerprints
+ - keys-to-console
+ - phone-home
+ - final-message
+
+system_info:
+  default_user:
+    name: root
+  distro: rhel
+  paths:
+    cloud_dir: /var/lib/cloud
+    templates_dir: /etc/cloud/templates
+  ssh_svcname: sshd
+
+# vim:syntax=yaml
 EOF
-
-chmod +x /var/lib/cloud/scripts/per-once/10_resizeroot
 
 
 mkdir -p /var/lib/cloud/scripts/per-boot

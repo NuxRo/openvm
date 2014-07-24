@@ -16,6 +16,29 @@ sed -i 's,name: cloud-user,name: root,' /etc/cloud/cloud.cfg
 # non-blocking resize fs, should be done in the background
 sed -i '/resize_rootfs_tmp/aresize_rootfs: noblock' /etc/cloud/cloud.cfg
 
+# ugly hack to add self-resizability
+mkdir -p /var/lib/cloud/scripts/per-once
+
+cat > /var/lib/cloud/scripts/per-once/10_resizeroot << "EOF"
+#!/usr/bin/bash
+
+
+disc=`/usr/bin/find /dev/ \( -name vda -o -name sda -o -name xvda \) -print`
+
+
+/usr/bin/echo "d
+n
+p
+1
+2048
+
+w
+" | /usr/sbin/fdisk $disc && reboot
+EOF
+
+chmod +x /var/lib/cloud/scripts/per-once/10_resizeroot
+
+
 mkdir -p /var/lib/cloud/scripts/per-boot
 cat > /var/lib/cloud/scripts/per-boot/10_cloud-set-guest-password << "EOF"
 #!/bin/bash

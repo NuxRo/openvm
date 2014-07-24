@@ -4,7 +4,6 @@ openssh-server
 cloud-init
 python-jsonpatch
 cloud-utils-growpart
-dracut-modules-growroot
 ntp
 wget
 acpid

@@ -7,8 +7,8 @@ datasource_list:
   - CloudStack
 EOF
 #fix userdata url issue with ending slash
-sed -i '385i \ \ \ \ #cloudstack fix remove ending slash' /usr/lib/python2.7/site-packages/boto/utils.py
-sed -i '386i \ \ \ \ ud_url = ud_url[:-1]' /usr/lib/python2.7/site-packages/boto/utils.py
+#sed -i '385i \ \ \ \ #cloudstack fix remove ending slash' /usr/lib/python2.7/site-packages/boto/utils.py
+#sed -i '386i \ \ \ \ ud_url = ud_url[:-1]' /usr/lib/python2.7/site-packages/boto/utils.py
 
 #sed -i 's,disable_root: 1,disable_root: 0,' /etc/cloud/cloud.cfg
 #sed -i 's,ssh_pwauth:   0,ssh_pwauth:   1,' /etc/cloud/cloud.cfg

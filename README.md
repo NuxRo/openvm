@@ -1,1 +1,1 @@
-Kickstart files used to build linux templates at openvm.eu
+Kickstart and other configuration files used to build templates at openvm.eu

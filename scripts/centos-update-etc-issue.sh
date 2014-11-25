@@ -8,5 +8,6 @@ echo IPs, routes, nameservers: >> /etc/issue
 ip a| grep inet >> /etc/issue
 ip ro | strings >> /etc/issue
 grep nameserver /etc/resolv.conf >> /etc/issue
+Generated at `date` >> /etc/issue
 echo >> /etc/issue
 

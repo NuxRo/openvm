@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# this script can be run from rc.local
+# it will update /etc/issue with useful info that will be shown in the tty, before the login prompt
+
 echo Kernel and hostname: > /etc/issue
 uname -r >> /etc/issue
 hostname -f >> /etc/issue

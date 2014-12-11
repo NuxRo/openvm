@@ -3,8 +3,6 @@
 # Buildroot 2014.11 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
-BR2_NEEDS_HOST_JAVAC=y
-BR2_NEEDS_HOST_JAR=y
 
 #
 # Target options
@@ -741,7 +739,7 @@ BR2_PACKAGE_ACPID=y
 # BR2_PACKAGE_ENSCRIPT is not set
 # BR2_PACKAGE_ERLANG is not set
 # BR2_PACKAGE_HASERL is not set
-BR2_PACKAGE_JAMVM=y
+# BR2_PACKAGE_JAMVM is not set
 # BR2_PACKAGE_JIMTCL is not set
 # BR2_PACKAGE_LUA is not set
 # BR2_PACKAGE_LUAJIT is not set
@@ -752,131 +750,7 @@ BR2_PACKAGE_MONO_ARCH_SUPPORTS=y
 # nodejs needs a toolchain w/ C++, IPv6, largefile, threads
 #
 # BR2_PACKAGE_PERL is not set
-BR2_PACKAGE_PHP=y
-
-#
-# Extensions
-#
-# BR2_PACKAGE_PHP_EXT_CALENDAR is not set
-# BR2_PACKAGE_PHP_EXT_FILEINFO is not set
-BR2_PACKAGE_PHP_EXT_READLINE=y
-BR2_PACKAGE_PHP_EXT_SESSION=y
-
-#
-# Compression extensions
-#
-# BR2_PACKAGE_PHP_EXT_BZIP2 is not set
-# BR2_PACKAGE_PHP_EXT_PHAR is not set
-# BR2_PACKAGE_PHP_EXT_ZIP is not set
-BR2_PACKAGE_PHP_EXT_ZLIB=y
-
-#
-# Cryptography extensions
-#
-# BR2_PACKAGE_PHP_EXT_HASH is not set
-BR2_PACKAGE_PHP_EXT_MCRYPT=y
-# BR2_PACKAGE_PHP_EXT_OPENSSL is not set
-
-#
-# Database extensions
-#
-# BR2_PACKAGE_PHP_EXT_DBA is not set
-# BR2_PACKAGE_PHP_EXT_PDO is not set
-
-#
-# Human language and character encoding support
-#
-# BR2_PACKAGE_PHP_EXT_GETTEXT is not set
-# BR2_PACKAGE_PHP_EXT_ICONV is not set
-
-#
-# intl support needs a toolchain w/ C++, wchar, threads
-#
-BR2_PACKAGE_PHP_EXT_MBSTRING=y
-
-#
-# Image processing
-#
-# BR2_PACKAGE_PHP_EXT_EXIF is not set
-BR2_PACKAGE_PHP_EXT_GD=y
-
-#
-# Mathematical extensions
-#
-BR2_PACKAGE_PHP_EXT_BCMATH=y
-# BR2_PACKAGE_PHP_EXT_GMP is not set
-
-#
-# Other basic extensions
-#
-# BR2_PACKAGE_PHP_EXT_JSON is not set
-# BR2_PACKAGE_PHP_EXT_TOKENIZER is not set
-
-#
-# Other services
-#
-BR2_PACKAGE_PHP_EXT_CURL=y
-# BR2_PACKAGE_PHP_EXT_FTP is not set
-# BR2_PACKAGE_PHP_EXT_SNMP is not set
-# BR2_PACKAGE_PHP_EXT_SOCKETS is not set
-
-#
-# Process Control
-#
-# BR2_PACKAGE_PHP_EXT_PCNTL is not set
-BR2_PACKAGE_PHP_EXT_POSIX=y
-# BR2_PACKAGE_PHP_EXT_SHMOP is not set
-# BR2_PACKAGE_PHP_EXT_SYSVMSG is not set
-# BR2_PACKAGE_PHP_EXT_SYSVSEM is not set
-# BR2_PACKAGE_PHP_EXT_SYSVSHM is not set
-
-#
-# Variable and Type related
-#
-# BR2_PACKAGE_PHP_EXT_CTYPE is not set
-# BR2_PACKAGE_PHP_EXT_FILTER is not set
-
-#
-# Web services
-#
-# BR2_PACKAGE_PHP_EXT_SOAP is not set
-# BR2_PACKAGE_PHP_EXT_XMLRPC is not set
-
-#
-# XML manipulation
-#
-# BR2_PACKAGE_PHP_EXT_DOM is not set
-BR2_PACKAGE_PHP_EXT_LIBXML2=y
-# BR2_PACKAGE_PHP_EXT_SIMPLEXML is not set
-# BR2_PACKAGE_PHP_EXT_WDDX is not set
-# BR2_PACKAGE_PHP_EXT_XML is not set
-# BR2_PACKAGE_PHP_EXT_XMLREADER is not set
-# BR2_PACKAGE_PHP_EXT_XMLWRITER is not set
-# BR2_PACKAGE_PHP_EXT_XSL is not set
-BR2_PACKAGE_PHP_CLI=y
-BR2_PACKAGE_PHP_FPM=y
-# BR2_PACKAGE_PHP_SAPI_CGI is not set
-# BR2_PACKAGE_PHP_SAPI_CLI is not set
-# BR2_PACKAGE_PHP_SAPI_FPM is not set
-# BR2_PACKAGE_PHP_SAPI_CLI_CGI is not set
-BR2_PACKAGE_PHP_SAPI_CLI_FPM=y
-
-#
-# External php extensions
-#
-# BR2_PACKAGE_PHP_GEOIP is not set
-# BR2_PACKAGE_PHP_GNUPG is not set
-# BR2_PACKAGE_PHP_IMAGICK is not set
-
-#
-# php-memcached needs a toolchain w/ C++, threads
-#
-# BR2_PACKAGE_PHP_SSH2 is not set
-# BR2_PACKAGE_PHP_YAML is not set
-
-#
-# php-zmq needs a toolchain w/ C++, IPv6, largefile, wchar, threads
-#
+# BR2_PACKAGE_PHP is not set
 BR2_PACKAGE_PYTHON=y
 # BR2_PACKAGE_PYTHON_PY_ONLY is not set
 BR2_PACKAGE_PYTHON_PYC_ONLY=y
@@ -969,7 +843,7 @@ BR2_PACKAGE_PYTHON_HASHLIB=y
 # BR2_PACKAGE_PYTHON_TORNADO is not set
 # BR2_PACKAGE_PYTHON_URWID is not set
 # BR2_PACKAGE_PYTHON_VERSIONTOOLS is not set
-BR2_PACKAGE_RUBY=y
+# BR2_PACKAGE_RUBY is not set
 # BR2_PACKAGE_TCL is not set
 
 #
@@ -1489,7 +1363,6 @@ BR2_PACKAGE_LIBPCAP=y
 # boost needs a toolchain w/ C++, largefile, threads
 #
 # BR2_PACKAGE_CLAPACK is not set
-BR2_PACKAGE_CLASSPATH=y
 
 #
 # cppcms needs a toolchain w/ C++, NPTL, wchar, dynamic library

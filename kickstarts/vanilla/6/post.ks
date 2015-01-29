@@ -183,7 +183,9 @@ openssl rand -base64 32 | passwd --stdin root
 echo NOZEROCONF=yes >> /etc/sysconfig/network
 
 # disable IPv6
-echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
-echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
-
+#echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+#echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+#the above prevents proper functioning of postfix and possibly others and don't want to start customising their config
+echo NETWORKING_IPV6=no >> /etc/sysconfig/network
+echo IPV6INIT=no >> /etc/sysconfig/network
 

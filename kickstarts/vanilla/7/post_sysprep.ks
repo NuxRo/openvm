@@ -65,3 +65,7 @@ yum -C -y remove NetworkManager --setopt="clean_requirements_on_remove=1"
 # default of having /tmp on tmpfs.
 echo "Disabling tmpfs for /tmp."
 systemctl mask tmp.mount
+
+# no ipv6
+echo NETWORKING_IPV6=no >> /etc/sysconfig/network
+echo IPV6INIT=no >> /etc/sysconfig/network

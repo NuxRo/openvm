@@ -1,4 +1,5 @@
 ## set cloudstack as data source in cloud-init with the modifications from exoscale.ch - thanks
+
 cat << EOF > /etc/cloud/cloud.cfg.d/99_cloudstack.cfg
 datasource:
   CloudStack: {}

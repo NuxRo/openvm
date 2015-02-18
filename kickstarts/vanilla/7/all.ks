@@ -353,3 +353,12 @@ EOF
 
 chmod +x /var/lib/cloud/scripts/per-boot/10_cloud-set-guest-password
 %end
+
+%post --nochroot
+rm -f /mnt/sysimage/root/anaconda-ks.cfg
+rm -f /mnt/sysimage/root/install.log
+rm -f /mnt/sysimage/root/install.log.syslog
+rm -f /mnt/sysimage/root/ks-script-*
+rm -f /mnt/sysimage/root/yum.log
+find /mnt/sysimage/var/log -type f -delete
+%end

@@ -27,7 +27,7 @@ rm -f /var/lib/systemd/random-seed
 ## PERFORMANCE
 
 # make kernel cmd line more vm friendly
-sed -i s/'GRUB_CMDLINE_LINUX_DEFAULT="quiet"'/'GRUB_CMDLINE_LINUX_DEFAULT="video=1024x768 console=ttyS0,115200n8 console=tty0 consoleblank=0 elevator=deadline"'/g /etc/default/grub
+sed -i s/'GRUB_CMDLINE_LINUX_DEFAULT="quiet"'/'GRUB_CMDLINE_LINUX_DEFAULT="vga=0x318 console=ttyS0,115200n8 console=tty0 consoleblank=0 elevator=deadline"'/g /etc/default/grub
 update-grub
 
 # implementing some low level settings ad-labam, on CentOS tuned takes care of this - and more

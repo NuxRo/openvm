@@ -1,1 +1,0 @@
-%packages --excludedocs --nobase
